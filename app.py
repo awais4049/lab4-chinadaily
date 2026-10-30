@@ -64,7 +64,7 @@ def find_article_link(driver):
     hrefs = driver.execute_script(
         "return Array.from(document.querySelectorAll('a')).map(a => a.href);"
     )
-    for pattern in (ARTICLE_RE, GENERIC_RE):
+    for pattern in (ARTICLE_RE,):
         for h in hrefs:
             if not h or "newssearch" in h or "index" in h or h.endswith("/"):
                 continue
